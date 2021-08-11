@@ -23,6 +23,8 @@ class Buku extends CI_Controller{
         $data['buku'] = $this->BukuModel->getBuku();
         
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('buku/index', $data);
         $this->load->view('templates/footer');
     }
@@ -54,6 +56,8 @@ class Buku extends CI_Controller{
             // $data['kelas'] = $this->KelasModel->getAllData();
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('buku/tambah', $data);
             $this->load->view('templates/footer');
         }else{
@@ -83,6 +87,8 @@ class Buku extends CI_Controller{
             // $data['kelas'] = $this->KelasModel->getAllData();
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('buku/edit', $data);
             $this->load->view('templates/footer');
 

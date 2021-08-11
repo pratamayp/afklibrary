@@ -29,6 +29,8 @@ class Dashboard extends CI_Controller{
         $data['total_pinjam'] = $this->PeminjamanModel->countTransaksi();
 
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('dashboard/index', $data);
         $this->load->view('templates/footer');
 

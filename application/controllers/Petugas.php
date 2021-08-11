@@ -23,6 +23,8 @@ class Petugas extends CI_Controller{
         $data['petugas'] = $this->PetugasModel->getPetugas();
         
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('petugas/index', $data);
         $this->load->view('templates/footer');
     }
@@ -47,6 +49,8 @@ class Petugas extends CI_Controller{
                 // $data['kelas'] = $this->KelasModel->getAllData();
 
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/sidebar');
+                $this->load->view('templates/topbar');
                 $this->load->view('petugas/tambah', $data);
                 $this->load->view('templates/footer');
             }else{
@@ -82,6 +86,8 @@ class Petugas extends CI_Controller{
             if ($this->form_validation->run() == FALSE){
 
                 $this->load->view('templates/header', $data);
+                $this->load->view('templates/sidebar');
+                $this->load->view('templates/topbar');
                 $this->load->view('petugas/edit', $data);
                 $this->load->view('templates/footer');
             }else{

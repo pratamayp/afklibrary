@@ -14,6 +14,7 @@ class Anggota extends CI_Controller{
         $this->load->library('form_validation');
         $this->load->helper('form');
         $this->load->model(['AnggotaModel', 'KelasModel']);
+
     }
 
     public function index()
@@ -21,12 +22,11 @@ class Anggota extends CI_Controller{
         $data['tab_title'] = "Halaman Admin";
         $data['title'] = "Data Anggota Perpustakaan";
 
-        //data anggota-kelas
         $data['anggota'] = $this->AnggotaModel->getAnggotaKelas();
-        //data anggota
-        // $data['anggota'] = $this->AnggotaModel->getAnggota();
         
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('anggota/index', $data);
         $this->load->view('templates/footer');
     }
@@ -59,6 +59,8 @@ class Anggota extends CI_Controller{
             $data['kelas'] = $this->KelasModel->getKelas();
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('anggota/tambah', $data);
             $this->load->view('templates/footer');
         }else{
@@ -90,6 +92,8 @@ class Anggota extends CI_Controller{
         if ($this->form_validation->run() == FALSE){
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('anggota/edit', $data);
             $this->load->view('templates/footer');
 

@@ -28,6 +28,8 @@ class Peminjaman extends CI_Controller{
         $data['transaksi'] = $this->PeminjamanModel->getJoinedData();
 
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('peminjaman/index', $data);
         $this->load->view('templates/footer');
     }
@@ -50,6 +52,8 @@ class Peminjaman extends CI_Controller{
             $data['transaksi'] = $this->PeminjamanModel->getJoinedData();
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('peminjaman/tambah', $data);
             $this->load->view('templates/footer');
         }else{
@@ -75,6 +79,8 @@ class Peminjaman extends CI_Controller{
         if ($this->form_validation->run() == FALSE){
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('peminjaman/kembali', $data);
             $this->load->view('templates/footer');
 
@@ -96,6 +102,8 @@ class Peminjaman extends CI_Controller{
         if ($this->form_validation->run() == FALSE){
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('peminjaman/detail', $data);
             $this->load->view('templates/footer');
 

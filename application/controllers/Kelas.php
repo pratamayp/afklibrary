@@ -23,6 +23,8 @@ class Kelas extends CI_Controller{
         $data['kelas'] = $this->KelasModel->getKelas();
         
         $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
         $this->load->view('kelas/index', $data);
         $this->load->view('templates/footer');
     }
@@ -37,6 +39,8 @@ class Kelas extends CI_Controller{
             $data['title'] = "Tambah Data Kelas";
             
             $this->load->view('templates/header', $data);
+            $this->load->view('templates/sidebar');
+            $this->load->view('templates/topbar');
             $this->load->view('kelas/tambah', $data);
             $this->load->view('templates/footer');
         }else{
