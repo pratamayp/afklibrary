@@ -15,7 +15,7 @@ class PeminjamanModel extends CI_Model{
     public function getJoinedData()
     {
         $this->db->select('*');
-        $this->db->from('peminjaman'); 
+        $this->db->from('peminjaman');
         $this->db->join('anggota', 'peminjaman.id_anggota = anggota.id_anggota');
         $this->db->join('buku', 'peminjaman.id_buku = buku.id_buku');
 
